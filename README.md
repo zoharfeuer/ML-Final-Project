@@ -36,7 +36,7 @@ The project is divided into several stages, as follows:
   Data Scaling: We apply data scaling to standardize the numeric features.
 
   PCA (Principal Component Analysis): We perform PCA for dimensionality reduction if required by the dataset.
-
+  
 4. Test Set Processing: We preprocess the test set to prepare it for model evaluation.
 
 5. Modeling: We build different machine learning models, including K-Nearest Neighbors (KNN), Multi-Layer Perceptron (MLP), Decision Tree, and Adaptive Boosting.
@@ -45,6 +45,38 @@ The project is divided into several stages, as follows:
 
 7. Prediction: We use the best-performing model to make predictions on new data.
 
+```python
+data_for_pca = train_set.loc[:, ~train_set.columns.isin(['purchase'])] 
+irrelevant, current_dataset_PCA, components = PCA_func(data_for_pca, len(data_for_pca.columns))
+
+plt.plot(current_dataset_PCA, 'o-')
+plt.title('Cumulative Explained Variance (all features)')
+plt.xlabel('Number of features')
+plt.ylabel('Cumulative explained variance')
+plt.axhline(0.95, c='g')
+plt.show()
+Outliers Detection
+We also visualized the presence of outliers in numeric features using box plots. Each box plot represents the distribution of a numeric feature.
+
+```python
+numeric_features = list(train_set.select_dtypes(include=['float64', 'int64']).columns)
+numeric_features.remove('purchase')
+
+for feature in numeric_features:
+    train_set[feature].plot(kind='box', figsize=(5, 5))
+    plt.title("Feature "+ feature)
+    plt.show()
+## Outliers Detection
+We also visualized the presence of outliers in numeric features using box plots. Each box plot represents the distribution of a numeric feature.
+
+```python
+numeric_features = list(train_set.select_dtypes(include=['float64', 'int64']).columns)
+numeric_features.remove('purchase')
+
+for feature in numeric_features:
+    train_set[feature].plot(kind='box', figsize=(5, 5))
+    plt.title("Feature "+ feature)
+    plt.show()
 ## Running the Project
 
 Before running the project, ensure you have the required libraries installed. The main script contains the code for all stages of the project. Run the cells sequentially in your Jupyter notebook or preferred Python environment.

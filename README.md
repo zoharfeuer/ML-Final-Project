@@ -2,7 +2,10 @@
 
 ## Project Overview
 
-In this machine learning final project, we explore a binary classification problem using various machine learning models. The project involves data exploration, preprocessing, modeling, and evaluation stages. We aim to build accurate models to predict the binary outcome of the dataset. The primary objective is to identify the best-performing model that can classify new data effectively.
+In this project, we explore a binary classification problem using various machine learning models. The project involves data exploration, preprocessing, modeling, and evaluation stages. The primary objective is to identify the best-performing model that can classify new data effectively.
+
+ML models: KNN, ANN, Decision Tree, Adaptive Boosting
+Evaluation Methods: confusion matrix, ROC Curece, AUC Score.
 
 ## Dataset Description
 
@@ -27,23 +30,27 @@ The project is divided into several stages, as follows:
 
 2. Exploration: We perform an exploratory analysis of the dataset, obtaining general information and visualizing the distribution of both numeric and categorical factors.
 
-3. Preprocessing: In this stage, we preprocess the data by checking for duplicates and handling object features that haven't undergone one-hot encoding.
+3. Preprocessing:
 
-  Outliers: We investigate and handle potential outliers in the dataset.
+  3.1. Duplicates: We remove duplicate instances.
 
-  Missing Data: We dealt with any remaining missing data, employing appropriate imputation techniques.
-
-  Data Scaling: We apply data scaling to standardize the numeric features.
-
-  PCA (Principal Component Analysis): We perform PCA for dimensionality reduction if required by the dataset.
+  3.2. Nulls: We handled nulls by exploring the feature and completing null values with a relevnat value.
   
-4. Test Set Processing: We preprocess the test set to prepare it for model evaluation.
+  3.3. One-Hot Encoding: We handeled categorial features by applying one-hot encoding.
+  
+  3.4. Outliers: We investigate and handle potential outliers in the dataset.
 
-5. Modeling: We build different machine learning models, including K-Nearest Neighbors (KNN), Multi-Layer Perceptron (MLP), Decision Tree, and Adaptive Boosting.
+  3.5. Missing Data: We deal with any remaining missing data, employing appropriate imputation techniques.
 
-6. Model Evaluation: We evaluate the performance of each model using metrics such as confusion matrix, cross-validation, and checking for overfitting.
+  3.6. Data Scaling: We apply data scaling to standardize the numeric features.
 
-7. Prediction: We use the best-performing model to make predictions on new data.
+  3.7. PCA (Principal Component Analysis): We perform PCA for dimensionality reduction.
+  
+4. Modeling: We build different machine learning models, including K-Nearest Neighbors (KNN), Multi-Layer Perceptron (MLP), Decision Tree, and Adaptive Boosting.
+
+5. Model Evaluation: We evaluate the performance of each model using metrics such as confusion matrix, cross-validation, and checking for overfitting.
+
+6. Prediction: We use the best-performing model to make predictions on new data.
 
 ## Running the Project
 
